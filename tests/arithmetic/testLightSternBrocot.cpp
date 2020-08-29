@@ -764,7 +764,7 @@ int main( int , char** )
   typedef Fraction::ConstIterator ConstIterator;
 
   BOOST_CONCEPT_ASSERT(( concepts::CPositiveIrreducibleFraction< Fraction > ));
-  BOOST_CONCEPT_ASSERT(( boost::InputIterator< ConstIterator > ));
+  BOOST_CONCEPT_ASSERT(( ALboost::InputIterator< ConstIterator > ));
 
   trace.beginBlock ( "Testing class LightSternBrocot" );
   bool res = testLightSternBrocot()

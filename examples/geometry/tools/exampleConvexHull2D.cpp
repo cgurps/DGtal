@@ -79,8 +79,8 @@ template <typename ForwardIterator, typename Board>
 void drawPolygon(const ForwardIterator& itb, const ForwardIterator& ite, 
 		 Board& aBoard, bool isClosed = true)
 {
-  BOOST_CONCEPT_ASSERT(( boost_concepts::ForwardTraversalConcept<ForwardIterator> )); 
-  BOOST_CONCEPT_ASSERT(( boost_concepts::ReadableIteratorConcept<ForwardIterator> )); 
+  BOOST_CONCEPT_ASSERT(( ALboost_concepts::ForwardTraversalConcept<ForwardIterator> )); 
+  BOOST_CONCEPT_ASSERT(( ALboost_concepts::ReadableIteratorConcept<ForwardIterator> )); 
   typedef typename IteratorCirculatorTraits<ForwardIterator>::Value Point; 
 
   ForwardIterator it = itb; 

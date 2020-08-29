@@ -230,8 +230,8 @@ bool rangeTest(const DSL& dsl)
 
   {//forward pass  
     typedef typename DSL::ConstIterator I; 
-    BOOST_CONCEPT_ASSERT(( boost_concepts::ReadableIteratorConcept<I> )); 
-    BOOST_CONCEPT_ASSERT(( boost_concepts::RandomAccessTraversalConcept<I> ));
+    BOOST_CONCEPT_ASSERT(( ALboost_concepts::ReadableIteratorConcept<I> )); 
+    BOOST_CONCEPT_ASSERT(( ALboost_concepts::RandomAccessTraversalConcept<I> ));
     bool res = true; 
     int c = 0; 
     for (I it = dsl.begin(first), itEnd = dsl.end(last); 
@@ -255,8 +255,8 @@ bool rangeTest(const DSL& dsl)
 
   {//backward pass
     typedef typename DSL::ConstReverseIterator I; 
-    BOOST_CONCEPT_ASSERT(( boost_concepts::ReadableIteratorConcept<I> )); 
-    BOOST_CONCEPT_ASSERT(( boost_concepts::RandomAccessTraversalConcept<I> ));
+    BOOST_CONCEPT_ASSERT(( ALboost_concepts::ReadableIteratorConcept<I> )); 
+    BOOST_CONCEPT_ASSERT(( ALboost_concepts::RandomAccessTraversalConcept<I> ));
     bool res = true; 
     int c = 0; 
     for (I it = dsl.rbegin(last), itEnd = dsl.rend(first); 
@@ -280,8 +280,8 @@ bool rangeTest(const DSL& dsl)
 
   {//random access services  
     typedef typename DSL::ConstIterator I; 
-    BOOST_CONCEPT_ASSERT(( boost_concepts::ReadableIteratorConcept<I> )); 
-    BOOST_CONCEPT_ASSERT(( boost_concepts::RandomAccessTraversalConcept<I> ));
+    BOOST_CONCEPT_ASSERT(( ALboost_concepts::ReadableIteratorConcept<I> )); 
+    BOOST_CONCEPT_ASSERT(( ALboost_concepts::RandomAccessTraversalConcept<I> ));
     bool res = true; 
     int c = 0; 
     I itBegin = dsl.begin(first); 

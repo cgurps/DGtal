@@ -110,7 +110,7 @@ struct HodgeTester<Calculus, -1>
 {
   static bool test(const Calculus& calculus)
   {
-    boost::ignore_unused_variable_warning( calculus );
+    ALboost::ignore_unused_variable_warning( calculus );
     return true;
   }
 };

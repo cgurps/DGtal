@@ -131,7 +131,7 @@ void testFFTScaling( ImageContainerBySTLVector<TDomain, TValue> const & anImage 
   typedef RealFFT< TDomain, TValue > FFT; // "typedef" instead of "using" because of g++ 4.7.4 bug.
   using RealPoint = typename FFT::RealPoint;
 
-  const TValue pi = boost::math::constants::pi<TValue>();
+  const TValue pi = ALboost::math::constants::pi<TValue>();
   const TValue freq = 5;
   const TValue phase = pi/4;
 

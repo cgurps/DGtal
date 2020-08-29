@@ -55,7 +55,7 @@
 #include "DGtal/topology/CDigitalSurfaceTracker.h"
 #include "DGtal/topology/UmbrellaComputer.h"
 //////////////////////////////////////////////////////////////////////////////
-namespace boost
+namespace ALboost
 {
   /**
      This is the kind of boost graph that a digital surface (see DGtal::DigitalSurface) can mimick.

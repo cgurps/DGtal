@@ -65,10 +65,10 @@ bool testProjection()
   typedef DGtal::functors::Projector<SpaceND<2,int> > Projector2; 
 
   typedef ConstIteratorAdapter<Iterator3,Projector2,Point2> Adapter; 
-  BOOST_CONCEPT_ASSERT(( boost::RandomAccessIterator<Iterator3> ));
+  BOOST_CONCEPT_ASSERT(( ALboost::RandomAccessIterator<Iterator3> ));
 
-  BOOST_CONCEPT_ASSERT(( boost_concepts::ReadableIteratorConcept<Adapter> ));
-  BOOST_CONCEPT_ASSERT(( boost_concepts::RandomAccessTraversalConcept<Adapter> ));
+  BOOST_CONCEPT_ASSERT(( ALboost_concepts::ReadableIteratorConcept<Adapter> ));
+  BOOST_CONCEPT_ASSERT(( ALboost_concepts::RandomAccessTraversalConcept<Adapter> ));
   
   //range of 3d Points
   std::vector<Point3> r;

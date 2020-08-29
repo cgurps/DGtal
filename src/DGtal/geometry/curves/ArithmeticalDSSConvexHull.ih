@@ -85,8 +85,8 @@ smartCH(const PointVector& aFirstPoint,
 {
   BOOST_STATIC_ASSERT(( concepts::ConceptUtils::SameType<Coordinate, typename PointVector::Coordinate>::value )); 
   BOOST_STATIC_ASSERT(( concepts::ConceptUtils::SameType<Position, typename PositionFunctor::Position>::value )); 
-  BOOST_CONCEPT_ASSERT(( boost_concepts::IncrementableIteratorConcept<OutputIterator> ));
-  BOOST_CONCEPT_ASSERT(( boost_concepts::WritableIteratorConcept<OutputIterator,PointVector> ));
+  BOOST_CONCEPT_ASSERT(( ALboost_concepts::IncrementableIteratorConcept<OutputIterator> ));
+  BOOST_CONCEPT_ASSERT(( ALboost_concepts::WritableIteratorConcept<OutputIterator,PointVector> ));
 
   //----------------- init --------------------//
   //functors
@@ -168,8 +168,8 @@ smartCHNextVertex(const Position& positionBound,
   ASSERT( rV != NumberTraits<Coordinate>::ZERO ); 
   ASSERT( ((V[0]*(X-Y)[1] - V[1]*(X-Y)[0]) == 1)||
 	  ((V[0]*(X-Y)[1] - V[1]*(X-Y)[0]) == -1) ); 
-  BOOST_CONCEPT_ASSERT(( boost_concepts::IncrementableIteratorConcept<OutputIterator> ));
-  BOOST_CONCEPT_ASSERT(( boost_concepts::WritableIteratorConcept<OutputIterator,PointVector> ));
+  BOOST_CONCEPT_ASSERT(( ALboost_concepts::IncrementableIteratorConcept<OutputIterator> ));
+  BOOST_CONCEPT_ASSERT(( ALboost_concepts::WritableIteratorConcept<OutputIterator,PointVector> ));
 
   bool stop = false; 
   Coordinate q = f1(remainderBound - rX, rV); //first ray casting
@@ -253,8 +253,8 @@ reversedSmartCH(PointVector U, PointVector L, PointVector V,
 	       OutputIterator uIto, OutputIterator lIto)
 {
   BOOST_STATIC_ASSERT(( concepts::ConceptUtils::SameType<Position, typename PositionFunctor::Position>::value )); 
-  BOOST_CONCEPT_ASSERT(( boost_concepts::IncrementableIteratorConcept<OutputIterator> ));
-  BOOST_CONCEPT_ASSERT(( boost_concepts::WritableIteratorConcept<OutputIterator,PointVector> ));
+  BOOST_CONCEPT_ASSERT(( ALboost_concepts::IncrementableIteratorConcept<OutputIterator> ));
+  BOOST_CONCEPT_ASSERT(( ALboost_concepts::WritableIteratorConcept<OutputIterator,PointVector> ));
   typedef typename PointVector::Coordinate Coordinate; 
   BOOST_STATIC_ASSERT(( concepts::ConceptUtils::SameType<Coordinate, typename PointVector::Coordinate>::value )); 
   ASSERT( aFirstPosition <= aLastPosition ); 
@@ -312,8 +312,8 @@ smartCHPreviousVertex(PointVector& X, const PointVector& Y, PointVector& V,
 		      const TruncationFunctor1& f1, 
 		      const TruncationFunctor2& f2)
 {
-  BOOST_CONCEPT_ASSERT(( boost_concepts::IncrementableIteratorConcept<OutputIterator> ));
-  BOOST_CONCEPT_ASSERT(( boost_concepts::WritableIteratorConcept<OutputIterator,PointVector> ));
+  BOOST_CONCEPT_ASSERT(( ALboost_concepts::IncrementableIteratorConcept<OutputIterator> ));
+  BOOST_CONCEPT_ASSERT(( ALboost_concepts::WritableIteratorConcept<OutputIterator,PointVector> ));
   typedef PointVector Vector; 
 
   //pre-conditions

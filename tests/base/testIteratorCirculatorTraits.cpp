@@ -57,7 +57,7 @@ using namespace DGtal;
 template< typename IC, typename T> 
 inline
 bool compareType( IC, T ){
-  return boost::is_same< 
+  return ALboost::is_same< 
     typename IteratorCirculatorTraits<IC>::Type, 
     T >::value; 
 }
@@ -70,7 +70,7 @@ bool compareType( IC, T ){
 template< typename IC, typename T> 
 inline
 bool compareCategory( IC, T ){
-  return boost::is_same< 
+  return ALboost::is_same< 
     typename IteratorCirculatorTraits<IC>::Category, 
     T >::value; 
 }

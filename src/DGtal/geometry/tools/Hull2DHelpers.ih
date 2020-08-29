@@ -85,8 +85,8 @@ namespace DGtal
                               const Predicate& aPredicate)
       {
         BOOST_CONCEPT_ASSERT(( concepts::CStack<Stack> ));
-        BOOST_CONCEPT_ASSERT(( boost_concepts::ForwardTraversalConcept<ForwardIterator> ));
-        BOOST_CONCEPT_ASSERT(( boost_concepts::ReadableIteratorConcept<ForwardIterator> ));
+        BOOST_CONCEPT_ASSERT(( ALboost_concepts::ForwardTraversalConcept<ForwardIterator> ));
+        BOOST_CONCEPT_ASSERT(( ALboost_concepts::ReadableIteratorConcept<ForwardIterator> ));
         
         //for all points
         for(ForwardIterator it = itb; it != ite; ++it)
@@ -122,11 +122,11 @@ namespace DGtal
       void openGrahamScan(const ForwardIterator& itb, const ForwardIterator& ite,
                           OutputIterator res, const Predicate& aPredicate)
       {
-        BOOST_CONCEPT_ASSERT(( boost_concepts::ForwardTraversalConcept<ForwardIterator> ));
-        BOOST_CONCEPT_ASSERT(( boost_concepts::ReadableIteratorConcept<ForwardIterator> ));
+        BOOST_CONCEPT_ASSERT(( ALboost_concepts::ForwardTraversalConcept<ForwardIterator> ));
+        BOOST_CONCEPT_ASSERT(( ALboost_concepts::ReadableIteratorConcept<ForwardIterator> ));
         typedef typename IteratorCirculatorTraits<ForwardIterator>::Value Point;
-        BOOST_CONCEPT_ASSERT(( boost_concepts::IncrementableIteratorConcept<OutputIterator> ));
-        BOOST_CONCEPT_ASSERT(( boost_concepts::WritableIteratorConcept<OutputIterator,Point> ));
+        BOOST_CONCEPT_ASSERT(( ALboost_concepts::IncrementableIteratorConcept<OutputIterator> ));
+        BOOST_CONCEPT_ASSERT(( ALboost_concepts::WritableIteratorConcept<OutputIterator,Point> ));
         
         //container
         std::deque<Point> container;
@@ -144,11 +144,11 @@ namespace DGtal
       void closedGrahamScanFromVertex(const ForwardIterator& itb, const ForwardIterator& ite,
                                       OutputIterator res, const Predicate& aPredicate)
       {
-        BOOST_CONCEPT_ASSERT(( boost_concepts::ForwardTraversalConcept<ForwardIterator> ));
-        BOOST_CONCEPT_ASSERT(( boost_concepts::ReadableIteratorConcept<ForwardIterator> ));
+        BOOST_CONCEPT_ASSERT(( ALboost_concepts::ForwardTraversalConcept<ForwardIterator> ));
+        BOOST_CONCEPT_ASSERT(( ALboost_concepts::ReadableIteratorConcept<ForwardIterator> ));
         typedef typename IteratorCirculatorTraits<ForwardIterator>::Value Point;
-        BOOST_CONCEPT_ASSERT(( boost_concepts::IncrementableIteratorConcept<OutputIterator> ));
-        BOOST_CONCEPT_ASSERT(( boost_concepts::WritableIteratorConcept<OutputIterator,Point> ));
+        BOOST_CONCEPT_ASSERT(( ALboost_concepts::IncrementableIteratorConcept<OutputIterator> ));
+        BOOST_CONCEPT_ASSERT(( ALboost_concepts::WritableIteratorConcept<OutputIterator,Point> ));
         
         //container
         std::deque<Point> container;
@@ -169,11 +169,11 @@ namespace DGtal
       void closedGrahamScanFromAnyPoint(const ForwardIterator& itb, const ForwardIterator& ite,
                                         OutputIterator res, const Predicate& aPredicate)
       {
-        BOOST_CONCEPT_ASSERT(( boost_concepts::ForwardTraversalConcept<ForwardIterator> ));
-        BOOST_CONCEPT_ASSERT(( boost_concepts::ReadableIteratorConcept<ForwardIterator> ));
+        BOOST_CONCEPT_ASSERT(( ALboost_concepts::ForwardTraversalConcept<ForwardIterator> ));
+        BOOST_CONCEPT_ASSERT(( ALboost_concepts::ReadableIteratorConcept<ForwardIterator> ));
         typedef typename IteratorCirculatorTraits<ForwardIterator>::Value Point;
-        BOOST_CONCEPT_ASSERT(( boost_concepts::IncrementableIteratorConcept<OutputIterator> ));
-        BOOST_CONCEPT_ASSERT(( boost_concepts::WritableIteratorConcept<OutputIterator,Point> ));
+        BOOST_CONCEPT_ASSERT(( ALboost_concepts::IncrementableIteratorConcept<OutputIterator> ));
+        BOOST_CONCEPT_ASSERT(( ALboost_concepts::WritableIteratorConcept<OutputIterator,Point> ));
         
         //container
         std::deque<Point> container;
@@ -192,7 +192,7 @@ namespace DGtal
         
         //while the last two points and the first one are not correctly oriented, we update the hull
         while ( (container.size() > 3)&&
-                !aPredicate( *boost::next(container.rbegin()), container.back(), container.front() ) )
+                !aPredicate( *ALboost::next(container.rbegin()), container.back(), container.front() ) )
           {
             updateHullWithAdaptedStack( backStack(container), container.front(), aPredicate );
             //we move forward the starting point
@@ -215,11 +215,11 @@ namespace DGtal
                                      const Predicate& aPredicate,
                                      PolarComparator& aPolarComparator)
       {
-        BOOST_CONCEPT_ASSERT(( boost_concepts::ForwardTraversalConcept<ForwardIterator> ));
-        BOOST_CONCEPT_ASSERT(( boost_concepts::ReadableIteratorConcept<ForwardIterator> ));
+        BOOST_CONCEPT_ASSERT(( ALboost_concepts::ForwardTraversalConcept<ForwardIterator> ));
+        BOOST_CONCEPT_ASSERT(( ALboost_concepts::ReadableIteratorConcept<ForwardIterator> ));
         typedef typename IteratorCirculatorTraits<ForwardIterator>::Value Point;
-        BOOST_CONCEPT_ASSERT(( boost_concepts::IncrementableIteratorConcept<OutputIterator> ));
-        BOOST_CONCEPT_ASSERT(( boost_concepts::WritableIteratorConcept<OutputIterator,Point> ));
+        BOOST_CONCEPT_ASSERT(( ALboost_concepts::IncrementableIteratorConcept<OutputIterator> ));
+        BOOST_CONCEPT_ASSERT(( ALboost_concepts::WritableIteratorConcept<OutputIterator,Point> ));
         BOOST_CONCEPT_ASSERT(( concepts::CPolarPointComparator2D<PolarComparator> ));
         
         if ( itb != ite )
@@ -253,8 +253,8 @@ namespace DGtal
                                      OutputIterator res,
                                      const Predicate& aPredicate)
       {
-        BOOST_CONCEPT_ASSERT(( boost_concepts::ForwardTraversalConcept<ForwardIterator> ));
-        BOOST_CONCEPT_ASSERT(( boost_concepts::ReadableIteratorConcept<ForwardIterator> ));
+        BOOST_CONCEPT_ASSERT(( ALboost_concepts::ForwardTraversalConcept<ForwardIterator> ));
+        BOOST_CONCEPT_ASSERT(( ALboost_concepts::ReadableIteratorConcept<ForwardIterator> ));
         typedef typename IteratorCirculatorTraits<ForwardIterator>::Value Point;
         
         //define a default comparator
@@ -276,11 +276,11 @@ namespace DGtal
                                      OutputIterator res,
                                      const Predicate& aPredicate )
       {
-        BOOST_CONCEPT_ASSERT(( boost_concepts::ForwardTraversalConcept<ForwardIterator> ));
-        BOOST_CONCEPT_ASSERT(( boost_concepts::ReadableIteratorConcept<ForwardIterator> ));
+        BOOST_CONCEPT_ASSERT(( ALboost_concepts::ForwardTraversalConcept<ForwardIterator> ));
+        BOOST_CONCEPT_ASSERT(( ALboost_concepts::ReadableIteratorConcept<ForwardIterator> ));
         typedef typename IteratorCirculatorTraits<ForwardIterator>::Value Point;
-        BOOST_CONCEPT_ASSERT(( boost_concepts::IncrementableIteratorConcept<OutputIterator> ));
-        BOOST_CONCEPT_ASSERT(( boost_concepts::WritableIteratorConcept<OutputIterator,Point> ));
+        BOOST_CONCEPT_ASSERT(( ALboost_concepts::IncrementableIteratorConcept<OutputIterator> ));
+        BOOST_CONCEPT_ASSERT(( ALboost_concepts::WritableIteratorConcept<OutputIterator,Point> ));
         
         if ( itb != ite )
           {

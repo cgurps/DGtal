@@ -95,7 +95,7 @@ namespace DGtal
     public:
       typedef typename T::ConstIterator ConstIterator;
     
-      BOOST_CONCEPT_ASSERT(( boost_concepts::SinglePassIteratorConcept<ConstIterator> ));
+      BOOST_CONCEPT_ASSERT(( ALboost_concepts::SinglePassIteratorConcept<ConstIterator> ));
     
       BOOST_CONCEPT_USAGE(CConstSinglePassRange)
       {

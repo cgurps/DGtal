@@ -86,8 +86,8 @@ namespace DGtal
   class ConstRangeAdapter
   {
 
-  BOOST_CONCEPT_ASSERT(( boost_concepts::ReadableIteratorConcept<TIterator> ));
-  BOOST_CONCEPT_ASSERT(( boost_concepts::BidirectionalTraversalConcept<TIterator> ));
+  BOOST_CONCEPT_ASSERT(( ALboost_concepts::ReadableIteratorConcept<TIterator> ));
+  BOOST_CONCEPT_ASSERT(( ALboost_concepts::BidirectionalTraversalConcept<TIterator> ));
 
     // ------------------------- inner types --------------------------------
   public: 

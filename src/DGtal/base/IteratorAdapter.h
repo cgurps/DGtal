@@ -77,7 +77,7 @@ namespace DGtal
     public boost::transform_iterator< TFunctor, TIterator, TReturnType&, TReturnType  > 
   {
 
-  BOOST_CONCEPT_ASSERT(( boost_concepts::LvalueIteratorConcept<TIterator> ));
+  BOOST_CONCEPT_ASSERT(( ALboost_concepts::LvalueIteratorConcept<TIterator> ));
 
   public: 
 

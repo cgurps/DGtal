@@ -124,7 +124,7 @@ See @ref dgtal_digsurf_sec3_2
 @tparam T the type that should be a model of CDigitalSurfaceContainer.
    */
   template <typename T> 
-  struct CDigitalSurfaceContainer : boost::CopyConstructible<T>
+  struct CDigitalSurfaceContainer : ALboost::CopyConstructible<T>
   {
     // ----------------------- Concept checks ------------------------------
   public:
@@ -134,8 +134,8 @@ See @ref dgtal_digsurf_sec3_2
     typedef typename T::DigitalSurfaceTracker DigitalSurfaceTracker;
     typedef typename T::Size Size;
 
-    BOOST_CONCEPT_ASSERT(( boost_concepts::SinglePassIteratorConcept<SurfelConstIterator> ));
-    BOOST_CONCEPT_ASSERT(( boost_concepts::ReadableIteratorConcept<SurfelConstIterator> ));
+    BOOST_CONCEPT_ASSERT(( ALboost_concepts::SinglePassIteratorConcept<SurfelConstIterator> ));
+    BOOST_CONCEPT_ASSERT(( ALboost_concepts::ReadableIteratorConcept<SurfelConstIterator> ));
     BOOST_CONCEPT_ASSERT(( concepts::CCellularGridSpaceND<KSpace> ));
     BOOST_CONCEPT_ASSERT(( CDigitalSurfaceTracker<DigitalSurfaceTracker> ));
 

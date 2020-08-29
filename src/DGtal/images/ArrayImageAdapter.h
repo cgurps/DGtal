@@ -118,7 +118,7 @@ namespace DGtal
     {
 
     // Checks Random-access iterator concept on TArrayIterator
-    BOOST_CONCEPT_ASSERT( (boost_concepts::RandomAccessTraversalConcept<TArrayIterator>) );
+    BOOST_CONCEPT_ASSERT( (ALboost_concepts::RandomAccessTraversalConcept<TArrayIterator>) );
 
     public:
       // Aliases

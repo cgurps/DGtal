@@ -103,7 +103,7 @@ int main()
   typedef MyLabels::ConstIterator LabelsConstIterator;
   typedef std::bitset<80> MyBitset;
 
-  BOOST_CONCEPT_ASSERT(( boost::ForwardIterator< LabelsConstIterator > ));
+  BOOST_CONCEPT_ASSERT(( ALboost::ForwardIterator< LabelsConstIterator > ));
 
   unsigned int nb = 0;
   unsigned int nbok = 0;

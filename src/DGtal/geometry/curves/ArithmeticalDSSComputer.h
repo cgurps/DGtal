@@ -93,8 +93,8 @@ namespace DGtal
      * Type of iterator, at least readable and forward
      */
     typedef TIterator ConstIterator;
-    BOOST_CONCEPT_ASSERT(( boost_concepts::ReadableIteratorConcept<ConstIterator> ));
-    BOOST_CONCEPT_ASSERT(( boost_concepts::ForwardTraversalConcept<ConstIterator> ));
+    BOOST_CONCEPT_ASSERT(( ALboost_concepts::ReadableIteratorConcept<ConstIterator> ));
+    BOOST_CONCEPT_ASSERT(( ALboost_concepts::ForwardTraversalConcept<ConstIterator> ));
 
     /**
      * Type of 2d digital point

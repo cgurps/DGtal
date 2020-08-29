@@ -150,8 +150,8 @@ template <DGtal::Dimension dimEmbedded, typename TNSCellConstIterator>
 DGtal::DiscreteExteriorCalculus<dimEmbedded, TNSCellConstIterator::value_type::Point::dimension, TLinearAlgebraBackend, TInteger>
 DGtal::DiscreteExteriorCalculusFactory<TLinearAlgebraBackend, TInteger>::createFromNSCells(const TNSCellConstIterator& begin, const TNSCellConstIterator& end, const bool add_border)
 {
-    BOOST_CONCEPT_ASSERT(( boost_concepts::SinglePassIteratorConcept<TNSCellConstIterator> ));
-    BOOST_CONCEPT_ASSERT(( boost_concepts::ReadableIteratorConcept<TNSCellConstIterator> ));
+    BOOST_CONCEPT_ASSERT(( ALboost_concepts::SinglePassIteratorConcept<TNSCellConstIterator> ));
+    BOOST_CONCEPT_ASSERT(( ALboost_concepts::ReadableIteratorConcept<TNSCellConstIterator> ));
 
     typedef DGtal::DiscreteExteriorCalculus<dimEmbedded, TNSCellConstIterator::value_type::Point::dimension, TLinearAlgebraBackend, TInteger> Calculus;
     typedef typename Calculus::Cell Cell;
@@ -160,7 +160,7 @@ DGtal::DiscreteExteriorCalculusFactory<TLinearAlgebraBackend, TInteger>::createF
     typedef typename Calculus::KSpace KSpace;
     typedef typename KSpace::Cells Cells;
 
-    BOOST_STATIC_ASSERT(( boost::is_convertible<typename TNSCellConstIterator::value_type, const SCell>::value ));
+    BOOST_STATIC_ASSERT(( ALboost::is_convertible<typename TNSCellConstIterator::value_type, const SCell>::value ));
 
     Calculus calculus;
 
@@ -173,7 +173,7 @@ DGtal::DiscreteExteriorCalculusFactory<TLinearAlgebraBackend, TInteger>::createF
         const SCell cell_signed = *ci;
         const Dimension cell_dim = calculus.myKSpace.sDim(cell_signed);
         ASSERT_MSG( cell_dim == dimEmbedded, "wrong n-cell dimension" );
-        boost::ignore_unused_variable_warning(cell_dim);
+        ALboost::ignore_unused_variable_warning(cell_dim);
 
         calculus.insertSCell(cell_signed);
 
@@ -232,8 +232,8 @@ DGtal::DiscreteExteriorCalculus<dimEmbedded, TNSCellConstIterator::value_type::P
 DGtal::DiscreteExteriorCalculusFactory<TLinearAlgebraBackend, TInteger>::createFromNSCells(const TNSCellConstIterator& begin, const TNSCellConstIterator& end, 
     const TSCellMeasureFunctor& normalFunctor, const double h, const bool add_border)
 {
-    BOOST_CONCEPT_ASSERT(( boost_concepts::SinglePassIteratorConcept<TNSCellConstIterator> ));
-    BOOST_CONCEPT_ASSERT(( boost_concepts::ReadableIteratorConcept<TNSCellConstIterator> ));
+    BOOST_CONCEPT_ASSERT(( ALboost_concepts::SinglePassIteratorConcept<TNSCellConstIterator> ));
+    BOOST_CONCEPT_ASSERT(( ALboost_concepts::ReadableIteratorConcept<TNSCellConstIterator> ));
 
     typedef DGtal::DiscreteExteriorCalculus<dimEmbedded, TNSCellConstIterator::value_type::Point::dimension, TLinearAlgebraBackend, TInteger> Calculus;
     typedef typename Calculus::Cell Cell;
@@ -242,7 +242,7 @@ DGtal::DiscreteExteriorCalculusFactory<TLinearAlgebraBackend, TInteger>::createF
     typedef typename Calculus::KSpace KSpace;
     typedef typename KSpace::Cells Cells;
 
-    BOOST_STATIC_ASSERT(( boost::is_convertible<typename TNSCellConstIterator::value_type, const SCell>::value ));
+    BOOST_STATIC_ASSERT(( ALboost::is_convertible<typename TNSCellConstIterator::value_type, const SCell>::value ));
 
     typedef typename TSCellMeasureFunctor::Quantity Quantity;
     std::vector<Quantity> measures;
@@ -263,7 +263,7 @@ DGtal::DiscreteExteriorCalculusFactory<TLinearAlgebraBackend, TInteger>::createF
         const SCell cell_signed = *ci;
         const Dimension cell_dim = calculus.myKSpace.sDim(cell_signed);
         ASSERT_MSG( cell_dim == dimEmbedded, "wrong n-cell dimension" );
-        boost::ignore_unused_variable_warning(cell_dim);
+        ALboost::ignore_unused_variable_warning(cell_dim);
 
         const int orth_dir = calculus.myKSpace.sOrthDir( cell_signed );
         const double measure = pow(h, dimEmbedded) * fabs( (*measure_it)[orth_dir] );

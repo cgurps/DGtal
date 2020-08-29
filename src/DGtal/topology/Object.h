@@ -63,7 +63,7 @@
 #include <DGtal/topology/helpers/NeighborhoodConfigurationsHelper.h>
 //////////////////////////////////////////////////////////////////////////////
 
-namespace boost
+namespace ALboost
 {
   /**
      This is the kind of boost graph that an Object (@see DGtal::Object) can mimick.

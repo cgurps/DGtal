@@ -62,7 +62,7 @@ using namespace DGtal;
 
 
 struct surfel_position_t {
-    typedef boost::vertex_property_tag kind;
+    typedef ALboost::vertex_property_tag kind;
 };
 
 struct surfel_position {
@@ -72,16 +72,16 @@ struct surfel_position {
   }
 };
 
-typedef boost::property< boost::vertex_index_t, std::size_t, 
-                         boost::property<surfel_position_t, surfel_position> > VertexProperties;
+typedef ALboost::property< ALboost::vertex_index_t, std::size_t, 
+                         ALboost::property<surfel_position_t, surfel_position> > VertexProperties;
 
 
 template <typename Graph1, typename Graph2, typename VertexIndexMap>
 struct my_vertex_copier {
-  typedef typename boost::property_map< Graph2, boost::vertex_index_t>::type graph_vertex_index_map;
-  typedef typename boost::property_map< Graph2, surfel_position_t>::type graph_vertex_position_map;
-  typedef typename boost::graph_traits< Graph1 >::vertex_descriptor Vertex1;
-  typedef typename boost::graph_traits< Graph2 >::vertex_descriptor Vertex2;
+  typedef typename ALboost::property_map< Graph2, ALboost::vertex_index_t>::type graph_vertex_index_map;
+  typedef typename ALboost::property_map< Graph2, surfel_position_t>::type graph_vertex_position_map;
+  typedef typename ALboost::graph_traits< Graph1 >::vertex_descriptor Vertex1;
+  typedef typename ALboost::graph_traits< Graph2 >::vertex_descriptor Vertex2;
 
   const Graph1 & myG1;
   graph_vertex_index_map graph_vertex_index;

@@ -53,7 +53,7 @@
 
 
 // The interface to the Boost Graph should be defined in namespace boost.
-namespace boost
+namespace ALboost
 {
 
   /**

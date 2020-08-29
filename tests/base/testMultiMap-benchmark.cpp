@@ -622,11 +622,11 @@ template <typename MapLXY>
 unsigned int
 generateData( MapLXY & m, unsigned int L, double proba_no_label, double proba_label )
 {
-  boost::random::mt19937 rng;         // produces randomness out of thin air
+  ALboost::random::mt19937 rng;         // produces randomness out of thin air
   rng.seed( 0 );
-  boost::random::uniform_smallint<> diceL(0, L-1);  
-  boost::random::uniform_01<> diceDouble;
-  boost::random::geometric_distribution<> diceNbLabels( proba_label ); // Y
+  ALboost::random::uniform_smallint<> diceL(0, L-1);  
+  ALboost::random::uniform_01<> diceDouble;
+  ALboost::random::geometric_distribution<> diceNbLabels( proba_label ); // Y
   // E(Y) = (1-p)/p,  Var(Y) = (1-p)/p^2
   std::cerr << "E(Y)=" << ( (1-proba_label)/proba_label )
             << " Var(Y)=" << ( (1-proba_label)/(proba_label*proba_label) )
@@ -658,14 +658,14 @@ template <typename MapLXY>
 unsigned int
 generateData( MapLXY & m, unsigned int L, double proba_no_label, double proba_label )
 {
-  boost::mt19937 rng;         // produces randomness out of thin air
+  ALboost::mt19937 rng;         // produces randomness out of thin air
   rng.seed( 0 );
-  boost::uniform_smallint<> diceL(0, L-1);  
-  boost::uniform_01<> diceDouble;
-  boost::geometric_distribution<> nbLabelsDist( proba_label ); // Y
-  boost::variate_generator
-    <boost::mt19937&, 
-     boost::geometric_distribution<> > diceNbLabels( rng, nbLabelsDist);
+  ALboost::uniform_smallint<> diceL(0, L-1);  
+  ALboost::uniform_01<> diceDouble;
+  ALboost::geometric_distribution<> nbLabelsDist( proba_label ); // Y
+  ALboost::variate_generator
+    <ALboost::mt19937&, 
+     ALboost::geometric_distribution<> > diceNbLabels( rng, nbLabelsDist);
   // E(Y) = (1-p)/p,  Var(Y) = (1-p)/p^2
   std::cerr << "E(Y)=" << ( (1-proba_label)/proba_label )
             << " Var(Y)=" << ( (1-proba_label)/(proba_label*proba_label) )

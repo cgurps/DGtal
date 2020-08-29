@@ -218,8 +218,8 @@ bool rangeTest(const DSS& dss)
 
   {//forward pass
     typedef typename DSS::ConstIterator I;
-    BOOST_CONCEPT_ASSERT(( boost_concepts::ReadableIteratorConcept<I> ));
-    BOOST_CONCEPT_ASSERT(( boost_concepts::BidirectionalTraversalConcept<I> ));
+    BOOST_CONCEPT_ASSERT(( ALboost_concepts::ReadableIteratorConcept<I> ));
+    BOOST_CONCEPT_ASSERT(( ALboost_concepts::BidirectionalTraversalConcept<I> ));
     bool res = true;
     int c = 0;
     for (I it = dss.begin(), itEnd = dss.end();

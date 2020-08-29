@@ -129,7 +129,7 @@ class AlphaThickSegmentComputer
 
   // ----------------------- public types --------------------------------------
   BOOST_STATIC_ASSERT(( TInputPoint::dimension == 2 ));
-  BOOST_CONCEPT_ASSERT((boost_concepts::ReadableIterator<TConstIterator>));
+  BOOST_CONCEPT_ASSERT((ALboost_concepts::ReadableIterator<TConstIterator>));
 
 public:
   /**

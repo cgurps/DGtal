@@ -82,7 +82,8 @@ namespace std {
 
 }
 
-namespace boost{
+namespace ALboost
+{
   /** @brief
    * Extend boost namespace to define a boost::hash function on
    * DGtal::KhalimskyCell.

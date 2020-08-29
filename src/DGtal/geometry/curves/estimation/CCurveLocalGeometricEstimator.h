@@ -96,7 +96,7 @@ namespace DGtal
     */
     template <typename T>
     struct CCurveLocalGeometricEstimator: 
-      boost::DefaultConstructible<T>
+      ALboost::DefaultConstructible<T>
     {
 
       // ----------------------- Concept checks ------------------------------
@@ -106,8 +106,8 @@ namespace DGtal
       BOOST_CONCEPT_ASSERT(( concepts::CQuantity< Quantity > ));
 
       typedef typename T::ConstIterator ConstIterator;
-      BOOST_CONCEPT_ASSERT(( boost_concepts::ReadableIteratorConcept< ConstIterator > ));
-      BOOST_CONCEPT_ASSERT(( boost_concepts::ForwardTraversalConcept< ConstIterator > ));
+      BOOST_CONCEPT_ASSERT(( ALboost_concepts::ReadableIteratorConcept< ConstIterator > ));
+      BOOST_CONCEPT_ASSERT(( ALboost_concepts::ForwardTraversalConcept< ConstIterator > ));
 
 
       BOOST_CONCEPT_USAGE( CCurveLocalGeometricEstimator )
@@ -126,9 +126,9 @@ namespace DGtal
       double myH; 
       ConstIterator myItb, myIte; 
       Quantity myQ;
-      boost::iterator_archetype<Quantity,
-                                boost::iterator_archetypes::writable_iterator_t,
-                                boost::incrementable_traversal_tag > myIto; 
+      ALboost::iterator_archetype<Quantity,
+                                ALboost::iterator_archetypes::writable_iterator_t,
+                                ALboost::incrementable_traversal_tag > myIto; 
 
       // ------------------------- Internals ------------------------------------
     private:

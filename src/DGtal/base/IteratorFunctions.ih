@@ -74,7 +74,7 @@ template<typename IC>
 void DGtal::advanceIterator(IC& ic, 
 			    typename IteratorCirculatorTraits<IC>::Difference n)
 {
-  BOOST_CONCEPT_ASSERT(( boost_concepts::ForwardTraversalConcept<IC> )); 
+  BOOST_CONCEPT_ASSERT(( ALboost_concepts::ForwardTraversalConcept<IC> )); 
 
   typedef typename IteratorCirculatorTraits<IC>::Category Category; 
   DGtal::detail::advanceIterator( ic, n, Category() ); 
@@ -86,7 +86,7 @@ void DGtal::detail::advanceIterator(IC& ic,
 				    typename IteratorCirculatorTraits<IC>::Difference n,
 				    ForwardCategory)
 {
-  BOOST_CONCEPT_ASSERT(( boost_concepts::ForwardTraversalConcept<IC> )); 
+  BOOST_CONCEPT_ASSERT(( ALboost_concepts::ForwardTraversalConcept<IC> )); 
   ASSERT(n >= 0); 
 
   int counter = 0; 
@@ -103,7 +103,7 @@ void DGtal::detail::advanceIterator(IC& ic,
 				    typename IteratorCirculatorTraits<IC>::Difference n, 
 				    RandomAccessCategory)
 {
-  BOOST_CONCEPT_ASSERT(( boost_concepts::RandomAccessTraversalConcept<IC> )); 
+  BOOST_CONCEPT_ASSERT(( ALboost_concepts::RandomAccessTraversalConcept<IC> )); 
   ASSERT(n >= 0); 
   ic += n; 
 }
@@ -113,7 +113,7 @@ template<typename IC>
 typename DGtal::IteratorCirculatorTraits<IC>::Difference 
 DGtal::rangeSize(const IC& itb, const IC& ite) 
 {
-  BOOST_CONCEPT_ASSERT(( boost_concepts::ForwardTraversalConcept<IC> )); 
+  BOOST_CONCEPT_ASSERT(( ALboost_concepts::ForwardTraversalConcept<IC> )); 
 
   typedef typename IteratorCirculatorTraits<IC>::Type Type; 
   typedef typename IteratorCirculatorTraits<IC>::Category Category; 
@@ -125,7 +125,7 @@ template<typename IC>
 typename DGtal::IteratorCirculatorTraits<IC>::Difference 
 DGtal::subRangeSize(const IC& itb, const IC& ite) 
 {
-  BOOST_CONCEPT_ASSERT(( boost_concepts::ForwardTraversalConcept<IC> )); 
+  BOOST_CONCEPT_ASSERT(( ALboost_concepts::ForwardTraversalConcept<IC> )); 
 
   typedef typename IteratorCirculatorTraits<IC>::Category Category; 
   return DGtal::detail::rangeSize( itb, ite, IteratorType(), Category() ); 
@@ -136,7 +136,7 @@ template<typename I>
 typename DGtal::IteratorCirculatorTraits<I>::Difference 
 DGtal::detail::rangeSize(const I& itb, const I& ite, IteratorType, ForwardCategory)
 {
-  BOOST_CONCEPT_ASSERT(( boost_concepts::ForwardTraversalConcept<I> )); 
+  BOOST_CONCEPT_ASSERT(( ALboost_concepts::ForwardTraversalConcept<I> )); 
 
   //size of the range
   I i( itb ); 
@@ -154,7 +154,7 @@ template<typename C>
 typename DGtal::IteratorCirculatorTraits<C>::Difference 
 DGtal::detail::rangeSize(const C& cb, const C& ce, CirculatorType, ForwardCategory)
 {
-  BOOST_CONCEPT_ASSERT(( boost_concepts::ForwardTraversalConcept<C> )); 
+  BOOST_CONCEPT_ASSERT(( ALboost_concepts::ForwardTraversalConcept<C> )); 
 
   if (isNotEmpty(cb, ce))
     {
@@ -179,7 +179,7 @@ template<typename I>
 typename DGtal::IteratorCirculatorTraits<I>::Difference 
 DGtal::detail::rangeSize(const I& itb, const I& ite, IteratorType, RandomAccessCategory)
 {
-  BOOST_CONCEPT_ASSERT(( boost_concepts::RandomAccessTraversalConcept<I> )); 
+  BOOST_CONCEPT_ASSERT(( ALboost_concepts::RandomAccessTraversalConcept<I> )); 
   ASSERT( itb <= ite ); 
 
   return (ite - itb); 
@@ -190,7 +190,7 @@ template<typename C>
 typename DGtal::IteratorCirculatorTraits<C>::Difference 
 DGtal::detail::rangeSize(const C& cb, const C& ce, CirculatorType, RandomAccessCategory)
 {
-  BOOST_CONCEPT_ASSERT(( boost_concepts::RandomAccessTraversalConcept<C> )); 
+  BOOST_CONCEPT_ASSERT(( ALboost_concepts::RandomAccessTraversalConcept<C> )); 
 
   if (isNotEmpty(cb, ce))
     {
@@ -215,7 +215,7 @@ DGtal::detail::rangeSize(const C& cb, const C& ce, CirculatorType, RandomAccessC
 template<typename IC>
 IC DGtal::rangeMiddle(const IC& itb, const IC& ite) 
 {
-  BOOST_CONCEPT_ASSERT(( boost_concepts::ForwardTraversalConcept<IC> )); 
+  BOOST_CONCEPT_ASSERT(( ALboost_concepts::ForwardTraversalConcept<IC> )); 
 
   typedef typename IteratorCirculatorTraits<IC>::Type Type; 
   typedef typename IteratorCirculatorTraits<IC>::Category Category; 
@@ -226,7 +226,7 @@ IC DGtal::rangeMiddle(const IC& itb, const IC& ite)
 template<typename IC>
 IC DGtal::subRangeMiddle(const IC& itb, const IC& ite) 
 {
-  BOOST_CONCEPT_ASSERT(( boost_concepts::ForwardTraversalConcept<IC> )); 
+  BOOST_CONCEPT_ASSERT(( ALboost_concepts::ForwardTraversalConcept<IC> )); 
 
   typedef typename IteratorCirculatorTraits<IC>::Category Category; 
   return DGtal::detail::rangeMiddle( itb, ite, IteratorType(), Category() ); 
@@ -236,7 +236,7 @@ IC DGtal::subRangeMiddle(const IC& itb, const IC& ite)
 template<typename I>
 I DGtal::detail::rangeMiddle(const I& itb, const I& ite, IteratorType, ForwardCategory)
 {
-  BOOST_CONCEPT_ASSERT(( boost_concepts::ForwardTraversalConcept<I> )); 
+  BOOST_CONCEPT_ASSERT(( ALboost_concepts::ForwardTraversalConcept<I> )); 
 
   //size of the range
   typename DGtal::IteratorCirculatorTraits<I>::Difference s
@@ -254,7 +254,7 @@ I DGtal::detail::rangeMiddle(const I& itb, const I& ite, IteratorType, ForwardCa
 template<typename C>
 C DGtal::detail::rangeMiddle(const C& cb, const C& ce, CirculatorType, ForwardCategory)
 {
-  BOOST_CONCEPT_ASSERT(( boost_concepts::ForwardTraversalConcept<C> )); 
+  BOOST_CONCEPT_ASSERT(( ALboost_concepts::ForwardTraversalConcept<C> )); 
 
   //size of the range
   typename DGtal::IteratorCirculatorTraits<C>::Difference s
@@ -272,7 +272,7 @@ C DGtal::detail::rangeMiddle(const C& cb, const C& ce, CirculatorType, ForwardCa
 template<typename I>
 I DGtal::detail::rangeMiddle(const I& itb, const I& ite, IteratorType, BidirectionalCategory)
 {
-  BOOST_CONCEPT_ASSERT(( boost_concepts::BidirectionalTraversalConcept<I> )); 
+  BOOST_CONCEPT_ASSERT(( ALboost_concepts::BidirectionalTraversalConcept<I> )); 
 
   I b( itb ); 
   I e( ite ); 
@@ -294,7 +294,7 @@ I DGtal::detail::rangeMiddle(const I& itb, const I& ite, IteratorType, Bidirecti
 template<typename C>
 C DGtal::detail::rangeMiddle(const C& cb, const C& ce, CirculatorType, BidirectionalCategory)
 {
-  BOOST_CONCEPT_ASSERT(( boost_concepts::BidirectionalTraversalConcept<C> )); 
+  BOOST_CONCEPT_ASSERT(( ALboost_concepts::BidirectionalTraversalConcept<C> )); 
 
   if (isNotEmpty(cb, ce))
     {
@@ -322,7 +322,7 @@ C DGtal::detail::rangeMiddle(const C& cb, const C& ce, CirculatorType, Bidirecti
 template<typename I>
 I DGtal::detail::rangeMiddle(const I& itb, const I& ite, IteratorType, RandomAccessCategory)
 {
-  BOOST_CONCEPT_ASSERT(( boost_concepts::RandomAccessTraversalConcept<I> ));
+  BOOST_CONCEPT_ASSERT(( ALboost_concepts::RandomAccessTraversalConcept<I> ));
   ASSERT( itb <= ite );  
 
   return ( itb + (ite-itb)/2 ); 
@@ -332,7 +332,7 @@ I DGtal::detail::rangeMiddle(const I& itb, const I& ite, IteratorType, RandomAcc
 template<typename C>
 C DGtal::detail::rangeMiddle(const C& cb, const C& ce, CirculatorType, RandomAccessCategory)
 {
-  BOOST_CONCEPT_ASSERT(( boost_concepts::RandomAccessTraversalConcept<C> )); 
+  BOOST_CONCEPT_ASSERT(( ALboost_concepts::RandomAccessTraversalConcept<C> )); 
 
   typename DGtal::IteratorCirculatorTraits<C>::Difference s 
     = DGtal::detail::rangeSize(cb, ce, CirculatorType(), RandomAccessCategory()); 

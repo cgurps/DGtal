@@ -24,7 +24,7 @@
                     // installation instructions here:
                     // http://boost.org/libs/iostreams/doc/index.html?path=7
 
-namespace boost { namespace iostreams {
+namespace ALboost { namespace iostreams {
 
 namespace zlib {
 

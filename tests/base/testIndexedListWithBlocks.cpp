@@ -93,9 +93,9 @@ checkErase( VContainer1 & v, LContainer2 & l,
 int main()
 {
   typedef IndexedListWithBlocks<double, 2, 10> MyIndexedList;
-  BOOST_CONCEPT_ASSERT(( boost::Container< MyIndexedList > ));
-  BOOST_CONCEPT_ASSERT(( boost::ForwardIterator< MyIndexedList::Iterator > ));
-  BOOST_CONCEPT_ASSERT(( boost::ForwardIterator< MyIndexedList::ConstIterator > ));
+  BOOST_CONCEPT_ASSERT(( ALboost::Container< MyIndexedList > ));
+  BOOST_CONCEPT_ASSERT(( ALboost::ForwardIterator< MyIndexedList::Iterator > ));
+  BOOST_CONCEPT_ASSERT(( ALboost::ForwardIterator< MyIndexedList::ConstIterator > ));
   unsigned int nb = 0;
   unsigned int nbok = 0;
   trace.beginBlock ( "Testing IndexedListWithBlocks" );

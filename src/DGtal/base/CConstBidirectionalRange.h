@@ -92,7 +92,7 @@ namespace DGtal
     public:
       typedef typename T::ConstReverseIterator ConstReverseIterator;
   
-      BOOST_CONCEPT_ASSERT(( boost_concepts::SinglePassIteratorConcept<ConstReverseIterator> ));
+      BOOST_CONCEPT_ASSERT(( ALboost_concepts::SinglePassIteratorConcept<ConstReverseIterator> ));
   
       BOOST_CONCEPT_USAGE(CConstBidirectionalRange)
       {
